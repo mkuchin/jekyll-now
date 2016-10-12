@@ -1,15 +1,14 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /
 ---
 
-Some information about you!
+My personal journey as a software developer started then I was 13 years old.
+My first program drew charts in Pascal.
+I still love to analyse data and make charts. 
 
-### More Information
+Now I am a full stack software developer and DevOps engineer. 
+I enjoy building fast web applications and deploying them in one click.
 
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+To learn more about my projects please visit the [Open Data](/open-data) and [Open Source](/open-source) pages.
