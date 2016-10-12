@@ -19,9 +19,13 @@ Web UI, authentication service and event recorder for private docker registry v2
   * Docker registry notification recording and audit
 
 I'm contributor of 
+
 ## [SaltStack, dockerng module](https://github.com/saltstack/salt)
+
 Software to automate the management and configuration of any infrastructure or application at scale.
+
 ## [Docker Automated Build for SoftEther VPN](https://github.com/siomiz/SoftEtherVPN)
+
 A simple [SoftEther VPN](https://www.softether.org/) server Docker image.
 
 I'm also member of [Central Coast Linux User Group](https://github.com/cclug/).
