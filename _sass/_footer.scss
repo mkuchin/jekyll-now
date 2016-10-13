@@ -1,0 +1,17 @@
+.wrapper {
+    min-height: 100%;
+    /* Equal to height of footer */
+    /* But also accounting for potential margin-bottom of last child */
+    min-height: calc(100vh - 138px);
+}
+
+/*
+.footer {
+    height: 88px;
+#    background-color: #f6f6f6;
+    padding-right: 25px;
+    padding-left: 25px;
+#    margin-top: 50px;
+}
+
+*/
