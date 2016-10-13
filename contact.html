@@ -1,0 +1,18 @@
+---
+layout: default
+title: Contact me
+---
+
+<h1>Contact me</h1>
+
+<div class="posts">
+  <form action="https://ykvgpew1wb.execute-api.ap-southeast-2.amazonaws.com/prod/mail" method="post">
+  <input type="hidden" name="redirect" value="{{ site.url }}thanks">
+  Email:<br>
+  <input type="email" name="email" size="40" required><br>
+  Message:<br>
+  <textarea rows="7" cols="80" name="message" required></textarea>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+</div>
