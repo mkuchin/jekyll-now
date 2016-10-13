@@ -13,6 +13,7 @@ I'm founder and maintainer of
 [![GitHub stars](https://img.shields.io/github/stars/mkuchin/docker-registry-web.svg?style=social&maxAge=86400)](https://github.com/mkuchin/docker-registry-web)
 
 Web UI, authentication service and event recorder for private docker registry v2.
+
 #### Features:
 
   * Browsing repositories, tags and images in docker registry v2
