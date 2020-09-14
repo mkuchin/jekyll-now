@@ -5,7 +5,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html id="htmlId">
 <head>
-  <title>Coverage Report :: SearchCommand</title>
+  <title>Coverage Report :: OkController</title>
   <style type="text/css">
     @import "../../css/coverage.css";
   </style>
@@ -17,10 +17,10 @@
 <div class="content">
 <div class="breadCrumbs">
     [ <a href="../../index.html">all classes</a> ]
-    [ <a href="../index.html">io.github.mkuchin.model</a> ]
+    [ <a href="../index.html">io.github.mkuchin.controller</a> ]
 </div>
 
-<h1>Coverage Summary for Class: SearchCommand (io.github.mkuchin.model)</h1>
+<h1>Coverage Summary for Class: OkController (io.github.mkuchin.controller)</h1>
 
 <table class="coverageStats">
 <tr>
@@ -39,7 +39,7 @@
 </th>
 </tr>
 <tr>
-  <td class="name">SearchCommand</td>
+  <td class="name">OkController</td>
 <td class="coverageStat">
   <span class="percent">
     100%
@@ -72,22 +72,29 @@
 <br/>
 
 
-<div class="sourceCode"><i>1</i>&nbsp;package io.github.mkuchin.model;
+<div class="sourceCode"><i>1</i>&nbsp;package io.github.mkuchin.controller;
 <i>2</i>&nbsp;
-<i>3</i>&nbsp;import lombok.Value;
-<i>4</i>&nbsp;
-<i>5</i>&nbsp;import java.util.List;
-<i>6</i>&nbsp;
-<b class="pc"><i>7</i>&nbsp;@Value</b>
-<i>8</i>&nbsp;public class SearchCommand {
-<b class="fc"><i>9</i>&nbsp;    List&lt;String&gt; searchText;</b>
-<i>10</i>&nbsp;}
+<i>3</i>&nbsp;import org.springframework.context.annotation.Profile;
+<i>4</i>&nbsp;import org.springframework.web.bind.annotation.GetMapping;
+<i>5</i>&nbsp;import org.springframework.web.bind.annotation.RequestMapping;
+<i>6</i>&nbsp;import org.springframework.web.bind.annotation.RestController;
+<i>7</i>&nbsp;
+<i>8</i>&nbsp;@RestController
+<i>9</i>&nbsp;@RequestMapping(&quot;/ok&quot;)
+<i>10</i>&nbsp;@Profile(&quot;test&quot;)
+<b class="fc"><i>11</i>&nbsp;public class OkController {</b>
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    @GetMapping
+<i>14</i>&nbsp;    public String ok() {
+<b class="fc"><i>15</i>&nbsp;        return &quot;ok&quot;;</b>
+<i>16</i>&nbsp;    }
+<i>17</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-09-14 20:22</div>
+    <div style="float:right;">generated on 2020-09-14 21:21</div>
 </div>
 </body>
 </html>
