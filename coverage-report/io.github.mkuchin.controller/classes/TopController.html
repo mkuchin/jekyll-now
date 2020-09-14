@@ -83,32 +83,31 @@
 <i>9</i>&nbsp;
 <i>10</i>&nbsp;import javax.servlet.http.HttpServletResponse;
 <i>11</i>&nbsp;import java.io.IOException;
-<i>12</i>&nbsp;import java.util.stream.Collectors;
-<i>13</i>&nbsp;
-<b class="fc"><i>14</i>&nbsp;@RequiredArgsConstructor</b>
-<i>15</i>&nbsp;@RestController
-<i>16</i>&nbsp;@RequestMapping(&quot;/top&quot;)
-<i>17</i>&nbsp;public class TopController {
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;    private final WordCountService wordCountService;
-<i>20</i>&nbsp;    private static final String TEXT_CSV = &quot;text/csv&quot;;
-<i>21</i>&nbsp;
-<i>22</i>&nbsp;    @GetMapping(value = &quot;/{n}&quot;, produces = TEXT_CSV)
-<i>23</i>&nbsp;    public void top(@PathVariable int n,
-<i>24</i>&nbsp;                    HttpServletResponse response) throws IOException {
-<b class="fc"><i>25</i>&nbsp;        var writer = response.getWriter();</b>
-<b class="fc"><i>26</i>&nbsp;        response.setContentType(TEXT_CSV);</b>
-<b class="fc"><i>27</i>&nbsp;        wordCountService.topWords(n).forEach(wordCount -&gt;</b>
-<b class="fc"><i>28</i>&nbsp;                writer.println(String.format(&quot;%s|%s&quot;, wordCount.getWord(), wordCount.getCount()))</b>
-<i>29</i>&nbsp;        );
-<i>30</i>&nbsp;    }
-<i>31</i>&nbsp;}
+<i>12</i>&nbsp;
+<b class="fc"><i>13</i>&nbsp;@RequiredArgsConstructor</b>
+<i>14</i>&nbsp;@RestController
+<i>15</i>&nbsp;@RequestMapping(&quot;/top&quot;)
+<i>16</i>&nbsp;public class TopController {
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    private final WordCountService wordCountService;
+<i>19</i>&nbsp;    private static final String TEXT_CSV = &quot;text/csv&quot;;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    @GetMapping(value = &quot;/{n}&quot;, produces = TEXT_CSV)
+<i>22</i>&nbsp;    public void top(@PathVariable int n,
+<i>23</i>&nbsp;                    HttpServletResponse response) throws IOException {
+<b class="fc"><i>24</i>&nbsp;        var writer = response.getWriter();</b>
+<b class="fc"><i>25</i>&nbsp;        response.setContentType(TEXT_CSV);</b>
+<b class="fc"><i>26</i>&nbsp;        wordCountService.topWords(n).forEach(wordCount -&gt;</b>
+<b class="fc"><i>27</i>&nbsp;                writer.println(String.format(&quot;%s|%s&quot;, wordCount.getWord(), wordCount.getCount()))</b>
+<i>28</i>&nbsp;        );
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-09-14 21:21</div>
+    <div style="float:right;">generated on 2020-09-14 22:46</div>
 </div>
 </body>
 </html>

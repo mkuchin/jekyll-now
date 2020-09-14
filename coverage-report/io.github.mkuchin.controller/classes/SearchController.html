@@ -75,32 +75,34 @@
 <div class="sourceCode"><i>1</i>&nbsp;package io.github.mkuchin.controller;
 <i>2</i>&nbsp;
 <i>3</i>&nbsp;import io.github.mkuchin.model.SearchCommand;
-<i>4</i>&nbsp;import io.github.mkuchin.model.WordCountResource;
+<i>4</i>&nbsp;import io.github.mkuchin.model.CountListResource;
 <i>5</i>&nbsp;import io.github.mkuchin.service.word.WordCountService;
 <i>6</i>&nbsp;import lombok.RequiredArgsConstructor;
-<i>7</i>&nbsp;import org.springframework.web.bind.annotation.PostMapping;
-<i>8</i>&nbsp;import org.springframework.web.bind.annotation.RequestBody;
-<i>9</i>&nbsp;import org.springframework.web.bind.annotation.RequestMapping;
-<i>10</i>&nbsp;import org.springframework.web.bind.annotation.RestController;
-<i>11</i>&nbsp;
-<i>12</i>&nbsp;@RestController
-<i>13</i>&nbsp;@RequestMapping(&quot;/search&quot;)
-<b class="fc"><i>14</i>&nbsp;@RequiredArgsConstructor</b>
-<i>15</i>&nbsp;public class SearchController {
-<i>16</i>&nbsp;
-<i>17</i>&nbsp;    private final WordCountService wordCountService;
-<i>18</i>&nbsp;
-<i>19</i>&nbsp;    @PostMapping
-<i>20</i>&nbsp;    public WordCountResource search(@RequestBody SearchCommand command) {
-<b class="fc"><i>21</i>&nbsp;        return new WordCountResource(wordCountService.getWordCount(command.getSearchText()));</b>
-<i>22</i>&nbsp;    }
-<i>23</i>&nbsp;}
+<i>7</i>&nbsp;import org.springframework.core.convert.ConversionService;
+<i>8</i>&nbsp;import org.springframework.web.bind.annotation.PostMapping;
+<i>9</i>&nbsp;import org.springframework.web.bind.annotation.RequestBody;
+<i>10</i>&nbsp;import org.springframework.web.bind.annotation.RequestMapping;
+<i>11</i>&nbsp;import org.springframework.web.bind.annotation.RestController;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;@RestController
+<i>14</i>&nbsp;@RequestMapping(&quot;/search&quot;)
+<b class="fc"><i>15</i>&nbsp;@RequiredArgsConstructor</b>
+<i>16</i>&nbsp;public class SearchController {
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    private final WordCountService wordCountService;
+<i>19</i>&nbsp;    private final ConversionService conversionService;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    @PostMapping
+<i>22</i>&nbsp;    public CountListResource search(@RequestBody SearchCommand command) {
+<b class="fc"><i>23</i>&nbsp;        return conversionService.convert(wordCountService.getWordCount(command.getSearchText()), CountListResource.class);</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-09-14 21:21</div>
+    <div style="float:right;">generated on 2020-09-14 22:46</div>
 </div>
 </body>
 </html>
