@@ -91,7 +91,7 @@
 <i>17</i>&nbsp;    private final List&lt;WordCountVO&gt; topWords;
 <i>18</i>&nbsp;
 <b class="fc"><i>19</i>&nbsp;    public WordCountService(Stream&lt;String&gt; lines) {</b>
-<b class="fc"><i>20</i>&nbsp;        this.wordCount = lines.flatMap(s -&gt; Arrays.stream(s.split(&quot;\\W+&quot;)))</b>
+<b class="fc"><i>20</i>&nbsp;        wordCount = lines.flatMap(s -&gt; Arrays.stream(s.split(&quot;\\W+&quot;)))</b>
 <b class="fc"><i>21</i>&nbsp;                .collect(</b>
 <b class="fc"><i>22</i>&nbsp;                        Collectors.groupingBy(</b>
 <i>23</i>&nbsp;                                String::toLowerCase,
@@ -99,7 +99,7 @@
 <i>25</i>&nbsp;                        )
 <i>26</i>&nbsp;                );
 <i>27</i>&nbsp;
-<b class="fc"><i>28</i>&nbsp;        this.topWords = wordCount.entrySet().stream().</b>
+<b class="fc"><i>28</i>&nbsp;        topWords = wordCount.entrySet().stream().</b>
 <b class="fc"><i>29</i>&nbsp;                sorted(Map.Entry.&lt;String, Long&gt;comparingByValue().reversed()).</b>
 <b class="fc"><i>30</i>&nbsp;                map(e -&gt; WordCountVO.builder().</b>
 <b class="fc"><i>31</i>&nbsp;                        word(e.getKey()).</b>
@@ -130,7 +130,7 @@
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-09-14 22:46</div>
+    <div style="float:right;">generated on 2020-09-15 08:50</div>
 </div>
 </body>
 </html>

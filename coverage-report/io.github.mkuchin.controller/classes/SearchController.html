@@ -61,7 +61,7 @@
     100%
   </span>
   <span class="absValue">
-    (2/ 2)
+    (3/ 3)
   </span>
 </td>
 </tr>
@@ -94,15 +94,16 @@
 <i>20</i>&nbsp;
 <i>21</i>&nbsp;    @PostMapping
 <i>22</i>&nbsp;    public CountListResource search(@RequestBody SearchCommand command) {
-<b class="fc"><i>23</i>&nbsp;        return conversionService.convert(wordCountService.getWordCount(command.getSearchText()), CountListResource.class);</b>
-<i>24</i>&nbsp;    }
-<i>25</i>&nbsp;}
+<b class="fc"><i>23</i>&nbsp;        var map = wordCountService.getWordCount(command.getSearchText());</b>
+<b class="fc"><i>24</i>&nbsp;        return conversionService.convert(map, CountListResource.class);</b>
+<i>25</i>&nbsp;    }
+<i>26</i>&nbsp;}
 </div>
 </div>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2020-09-14 22:46</div>
+    <div style="float:right;">generated on 2020-09-15 08:50</div>
 </div>
 </body>
 </html>
